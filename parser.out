@@ -1,0 +1,363 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> formula
+Rule 1     formula -> formula AND formula
+Rule 2     formula -> formula OR formula
+Rule 3     formula -> formula IF formula
+Rule 4     formula -> formula IFF formula
+Rule 5     formula -> NOT formula
+Rule 6     formula -> PAREN_I formula PAREN_D
+Rule 7     formula -> CONST_CERO
+Rule 8     formula -> CONST_UNO
+Rule 9     formula -> VARIABLES
+
+Terminals, with rules where they appear
+
+AND                  : 1
+CONST_CERO           : 7
+CONST_UNO            : 8
+IF                   : 3
+IFF                  : 4
+NOT                  : 5
+OR                   : 2
+PAREN_D              : 6
+PAREN_I              : 6
+VARIABLES            : 9
+error                : 
+
+Nonterminals, with rules where they appear
+
+formula              : 1 1 2 2 3 3 4 4 5 6 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . formula
+    (1) formula -> . formula AND formula
+    (2) formula -> . formula OR formula
+    (3) formula -> . formula IF formula
+    (4) formula -> . formula IFF formula
+    (5) formula -> . NOT formula
+    (6) formula -> . PAREN_I formula PAREN_D
+    (7) formula -> . CONST_CERO
+    (8) formula -> . CONST_UNO
+    (9) formula -> . VARIABLES
+
+    NOT             shift and go to state 2
+    PAREN_I         shift and go to state 3
+    CONST_CERO      shift and go to state 4
+    CONST_UNO       shift and go to state 5
+    VARIABLES       shift and go to state 6
+
+    formula                        shift and go to state 1
+
+state 1
+
+    (0) S' -> formula .
+    (1) formula -> formula . AND formula
+    (2) formula -> formula . OR formula
+    (3) formula -> formula . IF formula
+    (4) formula -> formula . IFF formula
+
+    AND             shift and go to state 7
+    OR              shift and go to state 8
+    IF              shift and go to state 9
+    IFF             shift and go to state 10
+
+
+state 2
+
+    (5) formula -> NOT . formula
+    (1) formula -> . formula AND formula
+    (2) formula -> . formula OR formula
+    (3) formula -> . formula IF formula
+    (4) formula -> . formula IFF formula
+    (5) formula -> . NOT formula
+    (6) formula -> . PAREN_I formula PAREN_D
+    (7) formula -> . CONST_CERO
+    (8) formula -> . CONST_UNO
+    (9) formula -> . VARIABLES
+
+    NOT             shift and go to state 2
+    PAREN_I         shift and go to state 3
+    CONST_CERO      shift and go to state 4
+    CONST_UNO       shift and go to state 5
+    VARIABLES       shift and go to state 6
+
+    formula                        shift and go to state 11
+
+state 3
+
+    (6) formula -> PAREN_I . formula PAREN_D
+    (1) formula -> . formula AND formula
+    (2) formula -> . formula OR formula
+    (3) formula -> . formula IF formula
+    (4) formula -> . formula IFF formula
+    (5) formula -> . NOT formula
+    (6) formula -> . PAREN_I formula PAREN_D
+    (7) formula -> . CONST_CERO
+    (8) formula -> . CONST_UNO
+    (9) formula -> . VARIABLES
+
+    NOT             shift and go to state 2
+    PAREN_I         shift and go to state 3
+    CONST_CERO      shift and go to state 4
+    CONST_UNO       shift and go to state 5
+    VARIABLES       shift and go to state 6
+
+    formula                        shift and go to state 12
+
+state 4
+
+    (7) formula -> CONST_CERO .
+
+    AND             reduce using rule 7 (formula -> CONST_CERO .)
+    OR              reduce using rule 7 (formula -> CONST_CERO .)
+    IF              reduce using rule 7 (formula -> CONST_CERO .)
+    IFF             reduce using rule 7 (formula -> CONST_CERO .)
+    $end            reduce using rule 7 (formula -> CONST_CERO .)
+    PAREN_D         reduce using rule 7 (formula -> CONST_CERO .)
+
+
+state 5
+
+    (8) formula -> CONST_UNO .
+
+    AND             reduce using rule 8 (formula -> CONST_UNO .)
+    OR              reduce using rule 8 (formula -> CONST_UNO .)
+    IF              reduce using rule 8 (formula -> CONST_UNO .)
+    IFF             reduce using rule 8 (formula -> CONST_UNO .)
+    $end            reduce using rule 8 (formula -> CONST_UNO .)
+    PAREN_D         reduce using rule 8 (formula -> CONST_UNO .)
+
+
+state 6
+
+    (9) formula -> VARIABLES .
+
+    AND             reduce using rule 9 (formula -> VARIABLES .)
+    OR              reduce using rule 9 (formula -> VARIABLES .)
+    IF              reduce using rule 9 (formula -> VARIABLES .)
+    IFF             reduce using rule 9 (formula -> VARIABLES .)
+    $end            reduce using rule 9 (formula -> VARIABLES .)
+    PAREN_D         reduce using rule 9 (formula -> VARIABLES .)
+
+
+state 7
+
+    (1) formula -> formula AND . formula
+    (1) formula -> . formula AND formula
+    (2) formula -> . formula OR formula
+    (3) formula -> . formula IF formula
+    (4) formula -> . formula IFF formula
+    (5) formula -> . NOT formula
+    (6) formula -> . PAREN_I formula PAREN_D
+    (7) formula -> . CONST_CERO
+    (8) formula -> . CONST_UNO
+    (9) formula -> . VARIABLES
+
+    NOT             shift and go to state 2
+    PAREN_I         shift and go to state 3
+    CONST_CERO      shift and go to state 4
+    CONST_UNO       shift and go to state 5
+    VARIABLES       shift and go to state 6
+
+    formula                        shift and go to state 13
+
+state 8
+
+    (2) formula -> formula OR . formula
+    (1) formula -> . formula AND formula
+    (2) formula -> . formula OR formula
+    (3) formula -> . formula IF formula
+    (4) formula -> . formula IFF formula
+    (5) formula -> . NOT formula
+    (6) formula -> . PAREN_I formula PAREN_D
+    (7) formula -> . CONST_CERO
+    (8) formula -> . CONST_UNO
+    (9) formula -> . VARIABLES
+
+    NOT             shift and go to state 2
+    PAREN_I         shift and go to state 3
+    CONST_CERO      shift and go to state 4
+    CONST_UNO       shift and go to state 5
+    VARIABLES       shift and go to state 6
+
+    formula                        shift and go to state 14
+
+state 9
+
+    (3) formula -> formula IF . formula
+    (1) formula -> . formula AND formula
+    (2) formula -> . formula OR formula
+    (3) formula -> . formula IF formula
+    (4) formula -> . formula IFF formula
+    (5) formula -> . NOT formula
+    (6) formula -> . PAREN_I formula PAREN_D
+    (7) formula -> . CONST_CERO
+    (8) formula -> . CONST_UNO
+    (9) formula -> . VARIABLES
+
+    NOT             shift and go to state 2
+    PAREN_I         shift and go to state 3
+    CONST_CERO      shift and go to state 4
+    CONST_UNO       shift and go to state 5
+    VARIABLES       shift and go to state 6
+
+    formula                        shift and go to state 15
+
+state 10
+
+    (4) formula -> formula IFF . formula
+    (1) formula -> . formula AND formula
+    (2) formula -> . formula OR formula
+    (3) formula -> . formula IF formula
+    (4) formula -> . formula IFF formula
+    (5) formula -> . NOT formula
+    (6) formula -> . PAREN_I formula PAREN_D
+    (7) formula -> . CONST_CERO
+    (8) formula -> . CONST_UNO
+    (9) formula -> . VARIABLES
+
+    NOT             shift and go to state 2
+    PAREN_I         shift and go to state 3
+    CONST_CERO      shift and go to state 4
+    CONST_UNO       shift and go to state 5
+    VARIABLES       shift and go to state 6
+
+    formula                        shift and go to state 16
+
+state 11
+
+    (5) formula -> NOT formula .
+    (1) formula -> formula . AND formula
+    (2) formula -> formula . OR formula
+    (3) formula -> formula . IF formula
+    (4) formula -> formula . IFF formula
+
+    AND             reduce using rule 5 (formula -> NOT formula .)
+    OR              reduce using rule 5 (formula -> NOT formula .)
+    IF              reduce using rule 5 (formula -> NOT formula .)
+    IFF             reduce using rule 5 (formula -> NOT formula .)
+    $end            reduce using rule 5 (formula -> NOT formula .)
+    PAREN_D         reduce using rule 5 (formula -> NOT formula .)
+
+  ! AND             [ shift and go to state 7 ]
+  ! OR              [ shift and go to state 8 ]
+  ! IF              [ shift and go to state 9 ]
+  ! IFF             [ shift and go to state 10 ]
+
+
+state 12
+
+    (6) formula -> PAREN_I formula . PAREN_D
+    (1) formula -> formula . AND formula
+    (2) formula -> formula . OR formula
+    (3) formula -> formula . IF formula
+    (4) formula -> formula . IFF formula
+
+    PAREN_D         shift and go to state 17
+    AND             shift and go to state 7
+    OR              shift and go to state 8
+    IF              shift and go to state 9
+    IFF             shift and go to state 10
+
+
+state 13
+
+    (1) formula -> formula AND formula .
+    (1) formula -> formula . AND formula
+    (2) formula -> formula . OR formula
+    (3) formula -> formula . IF formula
+    (4) formula -> formula . IFF formula
+
+    AND             reduce using rule 1 (formula -> formula AND formula .)
+    OR              reduce using rule 1 (formula -> formula AND formula .)
+    IF              reduce using rule 1 (formula -> formula AND formula .)
+    IFF             reduce using rule 1 (formula -> formula AND formula .)
+    $end            reduce using rule 1 (formula -> formula AND formula .)
+    PAREN_D         reduce using rule 1 (formula -> formula AND formula .)
+
+  ! AND             [ shift and go to state 7 ]
+  ! OR              [ shift and go to state 8 ]
+  ! IF              [ shift and go to state 9 ]
+  ! IFF             [ shift and go to state 10 ]
+
+
+state 14
+
+    (2) formula -> formula OR formula .
+    (1) formula -> formula . AND formula
+    (2) formula -> formula . OR formula
+    (3) formula -> formula . IF formula
+    (4) formula -> formula . IFF formula
+
+    OR              reduce using rule 2 (formula -> formula OR formula .)
+    IF              reduce using rule 2 (formula -> formula OR formula .)
+    IFF             reduce using rule 2 (formula -> formula OR formula .)
+    $end            reduce using rule 2 (formula -> formula OR formula .)
+    PAREN_D         reduce using rule 2 (formula -> formula OR formula .)
+    AND             shift and go to state 7
+
+  ! AND             [ reduce using rule 2 (formula -> formula OR formula .) ]
+  ! OR              [ shift and go to state 8 ]
+  ! IF              [ shift and go to state 9 ]
+  ! IFF             [ shift and go to state 10 ]
+
+
+state 15
+
+    (3) formula -> formula IF formula .
+    (1) formula -> formula . AND formula
+    (2) formula -> formula . OR formula
+    (3) formula -> formula . IF formula
+    (4) formula -> formula . IFF formula
+
+    IF              reduce using rule 3 (formula -> formula IF formula .)
+    IFF             reduce using rule 3 (formula -> formula IF formula .)
+    $end            reduce using rule 3 (formula -> formula IF formula .)
+    PAREN_D         reduce using rule 3 (formula -> formula IF formula .)
+    AND             shift and go to state 7
+    OR              shift and go to state 8
+
+  ! AND             [ reduce using rule 3 (formula -> formula IF formula .) ]
+  ! OR              [ reduce using rule 3 (formula -> formula IF formula .) ]
+  ! IF              [ shift and go to state 9 ]
+  ! IFF             [ shift and go to state 10 ]
+
+
+state 16
+
+    (4) formula -> formula IFF formula .
+    (1) formula -> formula . AND formula
+    (2) formula -> formula . OR formula
+    (3) formula -> formula . IF formula
+    (4) formula -> formula . IFF formula
+
+    IFF             reduce using rule 4 (formula -> formula IFF formula .)
+    $end            reduce using rule 4 (formula -> formula IFF formula .)
+    PAREN_D         reduce using rule 4 (formula -> formula IFF formula .)
+    AND             shift and go to state 7
+    OR              shift and go to state 8
+    IF              shift and go to state 9
+
+  ! AND             [ reduce using rule 4 (formula -> formula IFF formula .) ]
+  ! OR              [ reduce using rule 4 (formula -> formula IFF formula .) ]
+  ! IF              [ reduce using rule 4 (formula -> formula IFF formula .) ]
+  ! IFF             [ shift and go to state 10 ]
+
+
+state 17
+
+    (6) formula -> PAREN_I formula PAREN_D .
+
+    AND             reduce using rule 6 (formula -> PAREN_I formula PAREN_D .)
+    OR              reduce using rule 6 (formula -> PAREN_I formula PAREN_D .)
+    IF              reduce using rule 6 (formula -> PAREN_I formula PAREN_D .)
+    IFF             reduce using rule 6 (formula -> PAREN_I formula PAREN_D .)
+    $end            reduce using rule 6 (formula -> PAREN_I formula PAREN_D .)
+    PAREN_D         reduce using rule 6 (formula -> PAREN_I formula PAREN_D .)
+

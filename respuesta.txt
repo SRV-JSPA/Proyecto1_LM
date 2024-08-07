@@ -1,0 +1,86 @@
+Tokens para: 'p'
+LexToken(VARIABLES,'p',1,0)
+Resultado para: 'p'
+p
+
+Tokens para: '∼∼∼ q'
+LexToken(NOT,'∼',1,0)
+LexToken(NOT,'∼',1,1)
+LexToken(NOT,'∼',1,2)
+LexToken(VARIABLES,'q',1,4)
+Resultado para: '∼∼∼ q'
+('NOT', ('NOT', ('NOT', 'q')))
+
+Tokens para: '(p ∧ q)'
+LexToken(PAREN_I,'(',1,0)
+LexToken(VARIABLES,'p',1,1)
+LexToken(AND,'∧',1,3)
+LexToken(VARIABLES,'q',1,5)
+LexToken(PAREN_D,')',1,6)
+Resultado para: '(p ∧ q)'
+('∧', 'p', 'q')
+
+Tokens para: '(0 => (ros))'
+LexToken(PAREN_I,'(',1,0)
+LexToken(CONST_CERO,'0',1,1)
+LexToken(IF,'=>',1,3)
+LexToken(PAREN_I,'(',1,6)
+LexToken(VARIABLES,'r',1,7)
+LexToken(OR,'o',1,8)
+LexToken(VARIABLES,'s',1,9)
+LexToken(PAREN_D,')',1,10)
+LexToken(PAREN_D,')',1,11)
+Resultado para: '(0 => (ros))'
+('=>', '0', ('o', 'r', 's'))
+
+Tokens para: '∼(p ∧ q)'
+LexToken(NOT,'∼',1,0)
+LexToken(PAREN_I,'(',1,1)
+LexToken(VARIABLES,'p',1,2)
+LexToken(AND,'∧',1,4)
+LexToken(VARIABLES,'q',1,6)
+LexToken(PAREN_D,')',1,7)
+Resultado para: '∼(p ∧ q)'
+('NOT', ('∧', 'p', 'q'))
+
+Tokens para: '(p <=> ∼p)'
+LexToken(PAREN_I,'(',1,0)
+LexToken(VARIABLES,'p',1,1)
+LexToken(IFF,'<=>',1,3)
+LexToken(NOT,'∼',1,7)
+LexToken(VARIABLES,'p',1,8)
+LexToken(PAREN_D,')',1,9)
+Resultado para: '(p <=> ∼p)'
+('<=>', 'p', ('NOT', 'p'))
+
+Tokens para: '((p => q) ∧ p)'
+LexToken(PAREN_I,'(',1,0)
+LexToken(PAREN_I,'(',1,1)
+LexToken(VARIABLES,'p',1,2)
+LexToken(IF,'=>',1,4)
+LexToken(VARIABLES,'q',1,7)
+LexToken(PAREN_D,')',1,8)
+LexToken(AND,'∧',1,10)
+LexToken(VARIABLES,'p',1,12)
+LexToken(PAREN_D,')',1,13)
+Resultado para: '((p => q) ∧ p)'
+('∧', ('=>', 'p', 'q'), 'p')
+
+Tokens para: '(∼(p ∧ (q o r)) o s)'
+LexToken(PAREN_I,'(',1,0)
+LexToken(NOT,'∼',1,1)
+LexToken(PAREN_I,'(',1,2)
+LexToken(VARIABLES,'p',1,3)
+LexToken(AND,'∧',1,5)
+LexToken(PAREN_I,'(',1,7)
+LexToken(VARIABLES,'q',1,8)
+LexToken(OR,'o',1,10)
+LexToken(VARIABLES,'r',1,12)
+LexToken(PAREN_D,')',1,13)
+LexToken(PAREN_D,')',1,14)
+LexToken(OR,'o',1,16)
+LexToken(VARIABLES,'s',1,18)
+LexToken(PAREN_D,')',1,19)
+Resultado para: '(∼(p ∧ (q o r)) o s)'
+('o', ('NOT', ('∧', 'p', ('o', 'q', 'r'))), 's')
+
