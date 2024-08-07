@@ -88,5 +88,5 @@ test_parser('∼p')
 test_parser('(p ∧ (q o r))')
 test_parser('p => q')
 
-# HOLA
+
 
