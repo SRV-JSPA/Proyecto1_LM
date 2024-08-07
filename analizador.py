@@ -5,10 +5,10 @@ import ply.yacc as yacc
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# Redefinir la salida para permitir caracteres especiales
+
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-# Definición de tokens
+
 tokens = (
     'VARIABLES',   
     'NOT',        
