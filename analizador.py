@@ -29,6 +29,7 @@ t_CONST_CERO = r'0'
 t_CONST_UNO  = r'1'
 t_VARIABLES = r'[p-z]'
 
+
 t_ignore = ' \t\n'
 
 def t_error(t):
@@ -86,3 +87,5 @@ test_parser('p ∧ q')
 test_parser('∼p')
 test_parser('(p ∧ (q o r))')
 test_parser('p => q')
+
+
