@@ -24,3 +24,20 @@ t_PAREN_D = r'\)'
 t_CONST_CERO = r'0'
 t_CONST_UNO  = r'1'
 t_VARIABLES = r'[p-z]'
+t_ignore = ' \t'
+
+lexer = lex.lex()
+
+
+# def main():
+    
+#     data = 'p ∧ q o ∼r => (s <=> t) 0 1'
+
+    
+#     lexer.input(data)
+#     print("Tokens:")
+#     for tok in lexer:
+#         print(tok)
+
+# if __name__ == "__main__":
+#     main()
